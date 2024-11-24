@@ -7,5 +7,12 @@
     ":prHourlyLimitNone"
   ],
   "labels": ["dependency"],
-  "rangeStrategy": "pin"
+  "rangeStrategy": "pin",
+  "packageRules": [
+    {
+      "extends": ["packages:atlaskit"],
+      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+      "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}"
+    }
+  ]
 }
